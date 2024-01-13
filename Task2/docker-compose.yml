@@ -1,0 +1,17 @@
+version: '3.5'
+
+services:
+  db:
+    image: mariadb
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: QoinDB
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+  rabbit-mq:
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
